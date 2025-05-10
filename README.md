@@ -46,3 +46,7 @@ docker build --no-cache -t gch .
 ```bash
 docker run --name gch-demo -d -p 9999:80 gch
 ```
+
+## 参考
+[f2elint](https://www.npmjs.com/package/f2elint)
+[vue-vben-admin](https://github.com/vbenjs/vue-vben-admin)
