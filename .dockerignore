@@ -1,0 +1,17 @@
+# 基础排除
+**/node_modules
+**/dist
+.git
+.idea
+.vscode
+npm-debug.log
+yarn-error.log
+dist
+build
+coverage
+tmp
+*.log
+
+# 可选：如果不需要测试代码
+test/
+tests/

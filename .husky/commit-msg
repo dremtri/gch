@@ -1,0 +1,3 @@
+#!/bin/sh
+# 校验提交信息
+pnpm exec commitlint --config commitlint.config.mjs --edit "${1}"

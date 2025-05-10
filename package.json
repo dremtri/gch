@@ -1,0 +1,71 @@
+{
+  "name": "gch",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Talk is cheap. Show me the code.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "cz": "czg",
+    "bootstrap": "pnpm install",
+    "dev": "pnpm -C app dev",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "turbo run stub",
+    "prepare": "husky",
+    "build": "pnpm -C app build",
+    "build:docker": "pnpm -C app build"
+  },
+  "keywords": [],
+  "author": "dremtri",
+  "license": "MIT",
+  "packageManager": "pnpm@10.8.1",
+  "engines": {
+    "node": ">=18.20.8",
+    "pnpm": ">=10.0.0"
+  },
+  "dependencies": {
+    "@gch/constant": "workspace:*",
+    "@gch/eslint-config": "workspace:*",
+    "@gch/stylelint-config": "workspace:*",
+    "@gch/ts-config": "workspace:*",
+    "@gch/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "cz-git": "^1.11.1",
+    "czg": "^1.11.1",
+    "eslint": "^9.25.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.4.0",
+    "fast-glob": "^3.3.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.19.1",
+    "turbo": "^2.5.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.vue": [
+      "prettier --write",
+      "eslint --fix",
+      "stylelint --fix"
+    ],
+    "*.{scss,less,html}": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  }
+}
